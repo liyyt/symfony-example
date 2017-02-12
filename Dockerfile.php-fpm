@@ -1,0 +1,17 @@
+FROM liyyt/symfony-php-fpm:latest
+MAINTAINER Aaron Bolanos <aaron@liyyt.com>
+
+WORKDIR /var/www/html
+
+COPY app/ app/
+COPY bin/ bin/
+COPY src/ src/
+COPY tests/ tests/
+COPY web/ web/
+
+COPY composer.json composer.json
+#COPY composer.lock composer.lock
+COPY phpunit.xml.dist phpunit.xml.dist
+
+#RUN composer install --no-dev --optimize-autoloader
+RUN composer install

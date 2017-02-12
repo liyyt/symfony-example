@@ -1,0 +1,3 @@
+FROM liyyt/symfony-nginx:latest
+MAINTAINER Aaron Bolanos <aaron@liyyt.com>
+
